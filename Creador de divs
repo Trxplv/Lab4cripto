@@ -1,0 +1,36 @@
+// ==UserScript==
+// @name         Crear Divs
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Crea nuevos elementos div con la estructura especificada
+// @author       You
+// @match        https://cripto.tiiny.site/
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Crea nuevos elementos div
+    var nuevosDivs = [
+        createDiv('M7', 'MxkNzNlHK3A='),
+        createDiv('M8', 'p7SB7oBqV4U='),
+        createDiv('M9', 'tPciMWg0pmg='),
+        createDiv('M10','/XZw4C/lGEk=')
+
+    ];
+
+    // Inserta los nuevos elementos div en el documento
+    for (var i = 0; i < nuevosDivs.length; i++) {
+        document.body.appendChild(nuevosDivs[i]);
+    }
+
+    // Función para crear un nuevo elemento div con la estructura dada
+    function createDiv(clase, id) {
+        var nuevoDiv = document.createElement('div');
+        nuevoDiv.className = clase;
+        nuevoDiv.id = id;
+        return nuevoDiv;
+    }
+
+})();
